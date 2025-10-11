@@ -1,0 +1,85 @@
+{
+  "m": {
+    "lcli": {
+      "userConfigNotFound": "User configuration file not found at {{ .UserConfigPath }}. A new one will be created.",
+      "cfgCreatedSuccessfully": "Configuration file created successfully.",
+      "deletionConfirm": "This action is irreversible. Are you sure you want to delete? (y/N): ",
+      "yN": "y",
+      "redacted": "[REDACTED]",
+      "deletionAborted": "Deletion aborted.",
+      "a": "a",
+      "q": "q"
+    },
+    "c": {
+      "cfg": {
+        "cfgDeletedSuccessfully": "Configuration file(s) deleted successfully.",
+        "localeSuccessfullyChanged": "Locale successfully changed to {{ .Locale }}."
+      }
+    }
+  },
+  "e": {
+    "lcli": {
+      "unknownErrorOccurred": "An unknown error occurred.",
+      "causePrefix": "Cause:",
+      "unknownOption": "Unknown option: '{{ .Option }}'.",
+      "unexpectedPositional": "Unexpected positional argument: '{{ .Argument }}'.",
+      "missingValue": "Option '{{ .Option }}' argument is missing.",
+      "booleanWithValue": "Option '{{ .Option }}' does not take an argument.",
+      "ambiguousOptionValue": "Option '{{ .Option }}' argument is ambiguous. To specify a value that starts with a dash, use '{{ .Option }}=<value>'.",
+
+      "invalidOptionValue": "Invalid value provided for option '{{ .Option }}'.",
+      "commandNotImplemented": "Command not implemented: {{ .CommandAlias }}.",
+      "cfgCouldNotBeLoaded": "Configuration file could not be loaded from {{ .UserConfigPath }}."
+    },
+    "v": {
+    },
+    "c": {
+      "co": {
+        "coError": "Warning: Could not load module for command {{ .Command }}. Skipping completion generation."
+      },
+      "cfg": {
+        "editorNotFound": "No $EDITOR environment variable found. Please set $EDITOR to your preferred text editor.",
+        "editorLaunchFailed": "Failed to launch editor: {{ .ErrorMessage }}",
+        "failedToWriteLocale": "Failed to write locale file: {{ .ErrorMessage }}",
+        "invalidLocale": "Invalid locale: {{ .Lang }}."
+      }
+    }
+  },
+  "help": {
+    "generic": {
+      "header": "telocitycli: A scaffold for making CLIs scripts.",
+      "usage": "Usage: telocitycli <command> [options]",
+      "commandHeader": "Commands:",
+      "commandDescriptions": {
+        "hw": "A simple example command that prints a greeting.",
+        "cfg": "Manage application configuration.",
+        "co": "Generate bash completion script."
+      },
+      "footer": "For more information on any command, use `telocitycli <command> --help`.",
+      "globalOptionsHeader": "Global Options:",
+      "flags": {
+        "version": "Show application version."
+      }
+    },
+    "commands": {
+      "cfg": {
+        "usage": "Usage: telocitycli cfg [options]",
+        "description": "Manages the application configuration.",
+        "flags": {
+          "help": "Show this help message.",
+          "edit": "Open the user configuration file in the default editor.",
+          "remove": "Delete the user configuration files (prompts for confirmation).",
+          "lang": "Set the application language."
+        },
+        "footer": "Supported locales:\n{{ .LocaleList }}"
+      },
+      "hw": {
+        "usage": "Usage: telocitycli hw [--help]",
+        "description": "A demo command that prints a 'Hello, World!' message sourced from the configuration file.",
+        "flags": {
+          "help": "Display this help message for the hw command."
+        }
+      }
+    }
+  }
+}
