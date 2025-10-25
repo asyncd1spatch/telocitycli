@@ -1,0 +1,46 @@
+{
+  "name": "telocitycli",
+  "version": "0.0.34",
+  "author": "asyncd1spatch",
+  "description": "cli scaffold",
+  "type": "module",
+  "private": true,
+  "files": [
+    "start.ts",
+    "src/",
+    "data/"
+  ],
+  "bin": {
+    "telocitycli": "./start.ts"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    },
+    "./core": {
+      "import": "./src/libs/core/index.ts"
+    },
+    "./types": {
+      "import": "./src/libs/types/index.ts"
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "pretest": "bun typecheck && bun lint",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint",
+    "format": "dprint fmt",
+    "test": "bun test --concurrent",
+    "start": "bun ./start.ts",
+    "build:bin": "bun build.bin.js",
+    "hydrate": "bun ./scripts/hydratefromtelocity.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "1.3.1",
+    "dprint": "0.50.2",
+    "oxlint": "1.24.0"
+  },
+  "peerDependencies": {
+    "typescript": "5.9.3"
+  }
+}
